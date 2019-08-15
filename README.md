@@ -7,6 +7,7 @@
 
 ```js
 var p = videojs.players.video_player;
+p.muted(true);
 p.pause = function() {};
 p.realTrigger = p.trigger;
 p.trigger = function(e, h) {
