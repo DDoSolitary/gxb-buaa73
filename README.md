@@ -7,6 +7,9 @@
 
 ```js
 var p = videojs.players.video_player;
+if(p == undefined) {
+    $('.gxb-next-blue').get(0).click();
+}
 p.muted(true);
 p.pause = function() {};
 p.realTrigger = p.trigger;
