@@ -6,7 +6,7 @@
 2. 粘贴以下代码并按回车，将会防止窗口切换时自动暂停，并且以两倍速播放视频。
 
 ```js
-p = videojs.players.video_player;
+var p = videojs.players.video_player;
 p.pause = function() {};
 p.realTrigger = p.trigger;
 p.trigger = function(e, h) {
