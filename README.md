@@ -79,7 +79,7 @@ $('.question-item').each(function (i) {
 
 此方法可以一次性快速看完所有所有视频，但是需要已root的安卓手机
 
-1. 下载repo中的`progress.xml`文件。
+1. 下载repo中的[`progress.xml`](https://github.com/DDoSolitary/gxb-buaa73/raw/master/progress.xml)文件。
 2. 参照下文[获取用户ID](#获取用户ID)中的内容获取自己的用户ID，然后把`progress.xml`中每一行`name="`之后，`null`之前的`2333`替换为自己的用户ID。
 3. 下载[高校邦App](http://android.myapp.com/myapp/detail.htm?apkName=com.kaikeba.u.student)，通过课程页面右上角的下载按钮下载所有你还未看完的视频。
 4. 彻底退出高校邦App。
