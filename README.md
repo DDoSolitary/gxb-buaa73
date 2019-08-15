@@ -11,7 +11,7 @@ p.pause = function() {};
 p.realTrigger = p.trigger;
 p.trigger = function(e, h) {
 	if (e !== "ratechange") {
-		p.realTrigger(e, h)
+		p.realTrigger(e, h);
 	}
 };
 p.playbackRate(2);
