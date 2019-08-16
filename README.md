@@ -1,5 +1,42 @@
 # 坏孩子的高校邦工具箱（北航🐍院专属）
 
+## 批量完成视频观看
+
+感谢[@TakiVotoid](https://github.com/TakiVotoid)提供插件脚本：[#1](https://github.com/DDoSolitary/gxb-buaa73/issues/1)
+1. 在任意视频播放页面按F12打开开发者工具，切换到控制台（不同浏览器情况不同，一般显示为`控制台`，`Console`等）。
+2. 粘贴以下代码并按回车，将会自动完成当前课程所有视频的观看。等几秒刷新即可看到效果。
+
+```js
+var urlPrefix = `${location.protocol}//${location.host}`
+unitList.forEach(function (unit) {
+	unit.itemList.forEach(function (item) {
+		item.chapterList.forEach(function (chapter) {
+			if (chapter.contentType == 'Video') {
+				$.ajax({
+					url: `${urlPrefix}/class/${classinfo.classId}/chapter/${chapter.chapterId}/api`,
+					type: 'GET',
+					success: function (result) {
+						$.ajax({
+							url: `${urlPrefix}/log/video/${chapter.chapterId}/${classinfo.classId}/api`,
+							type: 'POST',
+							data: {
+								data: JSON.stringify([{
+									"state": "listening",
+									"level": 2,
+									"ch": result.chapter.video.seconds,
+									"mh": 0
+								}])
+							}
+						});
+					}
+				});
+			}
+		});
+	});
+});
+```
+
+
 ## 快速播放
 
 1. 在视频播放页面按F12打开开发者工具，切换到控制台（不同浏览器情况不同，一般显示为`控制台`，`Console`等）。
