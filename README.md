@@ -7,7 +7,7 @@
 2. 粘贴以下代码并按回车，将会自动完成当前课程所有视频的观看。等几秒刷新即可看到效果。
 
 ```js
-var urlPrefix = `${location.protocol}//${location.host}`
+var urlPrefix = `${location.protocol}//${location.host}`;
 unitList.forEach(function (unit) {
 	unit.itemList.forEach(function (item) {
 		item.chapterList.forEach(function (chapter) {
