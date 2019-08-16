@@ -13,7 +13,7 @@
         "js/inject_2.js",
         "js/inject_1.js",
         "js/quick_finish.js",
-		"js/this_video.js"
+	"js/this_video.js"
   ],
   "manifest_version": 2
 }
