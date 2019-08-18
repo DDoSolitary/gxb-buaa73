@@ -45,13 +45,15 @@ unitList.forEach(function (unit) {
 ```js
 var p = videojs.players.video_player;
 p.muted(true);
-p.pause = function() {};
-p.realTrigger = p.trigger;
-p.trigger = function(e, h) {
-	if (e !== "ratechange") {
-		p.realTrigger(e, h);
-	}
-};
+jQuery(window).blur(function(){p.play();});
+if (!p.realTrigger) {
+    p.realTrigger = p.trigger;
+    p.trigger = function (e, h) {
+        if (e !== "ratechange") {
+            p.realTrigger(e, h);
+        }
+    }
+}
 p.playbackRate(2);
 ```
 
