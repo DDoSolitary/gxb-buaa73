@@ -16,10 +16,10 @@
     }
   },
   "web_accessible_resources": [
-    "js/inject_2.js",
-    "js/inject_1.js",
     "js/quick_finish.js",
-    "js/this_video.js"
+    "js/this_video.js",
+    "js/this_quiz_finish.js",
+    "js/this_quiz_fill.js"
   ],
   "icons": {
     "16": "img/icon_16.png",

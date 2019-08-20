@@ -109,10 +109,16 @@ var data = {
 var answers = data[quizInfo.contextId][quizInfo.quizId];
 $('.question-item').each(function (i) {
 	var boxes = $(this).find('[answer_id]');
+	for (j = 0; j < boxes.length; j++) {
+	    if (boxes[j].classList.contains("checked")) {
+	        boxes[j].click();
+	    }
+	}
 	answers[i].forEach(function (x) {
-		boxes.eq(x).click();
+	    boxes.eq(x).click();
 	});
 });
+
 ```
 
 ## 快速播放增强版
