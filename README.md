@@ -1,5 +1,7 @@
 # 坏孩子的高校邦工具箱（北航🐍院专属）
 
+## 本repo增加开发了适用部分浏览器的插件，适用2019年的状况，但不保证现今仍能使用。
+
 ## 批量完成视频观看
 
 感谢[@TakiVotoid](https://github.com/TakiVotoid)提供插件脚本：[#1](https://github.com/DDoSolitary/gxb-buaa73/issues/1)
@@ -45,13 +47,15 @@ unitList.forEach(function (unit) {
 ```js
 var p = videojs.players.video_player;
 p.muted(true);
-p.pause = function() {};
-p.realTrigger = p.trigger;
-p.trigger = function(e, h) {
-	if (e !== "ratechange") {
-		p.realTrigger(e, h);
-	}
-};
+jQuery(window).blur(function(){p.play();});
+if (!p.realTrigger) {
+    p.realTrigger = p.trigger;
+    p.trigger = function (e, h) {
+        if (e !== "ratechange") {
+            p.realTrigger(e, h);
+        }
+    }
+}
 p.playbackRate(2);
 ```
 
@@ -128,10 +132,16 @@ var data = {
 var answers = data[quizInfo.contextId][quizInfo.quizId];
 $('.question-item').each(function (i) {
 	var boxes = $(this).find('[answer_id]');
+	for (j = 0; j < boxes.length; j++) {
+	    if (boxes[j].classList.contains("checked")) {
+	        boxes[j].click();
+	    }
+	}
 	answers[i].forEach(function (x) {
-		boxes.eq(x).click();
+	    boxes.eq(x).click();
 	});
 });
+
 ```
 
 ## 快速播放增强版

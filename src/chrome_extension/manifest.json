@@ -1,0 +1,31 @@
+{
+  "name": "坏孩子的高校邦工具箱",
+  "version": "2.333",
+  "description": "快速水课，迎来退学~",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "img/icon_16.png",
+      "32": "img/icon_32.png",
+      "48": "img/icon_48.png",
+      "128": "img/icon_128.png"
+    }
+  },
+  "web_accessible_resources": [
+    "js/quick_finish.js",
+    "js/this_video.js",
+    "js/this_quiz_finish.js",
+    "js/this_quiz_fill.js"
+  ],
+  "icons": {
+    "16": "img/icon_16.png",
+    "32": "img/icon_32.png",
+    "48": "img/icon_48.png",
+    "128": "img/icon_128.png"
+  },
+  "manifest_version": 2
+}
