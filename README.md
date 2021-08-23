@@ -1,5 +1,7 @@
 # 坏孩子的高校邦工具箱（北航🐍院专属）
 
+## 本repo增加开发了适用部分浏览器的插件，但不保证现今仍能使用。
+
 ## 批量完成视频观看
 
 感谢[@TakiVotoid](https://github.com/TakiVotoid)提供插件脚本：[#1](https://github.com/DDoSolitary/gxb-buaa73/issues/1)
